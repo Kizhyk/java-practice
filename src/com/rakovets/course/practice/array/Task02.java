@@ -5,7 +5,7 @@ import com.rakovets.course.util.StandardInputTask;
 import java.util.Arrays;
 
 /**
- * Разработать программу для электронного дневника:
+ * Разработать программу для электронного дневника,
  * которая работает с отметками по всем предметам.
  *
  * @author Dmitry Rakovets
@@ -26,6 +26,7 @@ public class Task02 extends StandardInputTask {
 
 	/**
 	 * Возвращает средне арифметическую отметку за весь период обучения с округлением до 2 знаков.
+	 *
 	 * @param marks отметки
 	 * @return средняя арифметическая отметка
 	 */
@@ -33,11 +34,21 @@ public class Task02 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return 0.0;
+		int marksAmount = 0;
+		for (int[] n : marks) {
+			marksAmount += n.length;
+		}
+		int marksSum = Arrays.stream(marks)
+				.flatMapToInt(Arrays::stream).sum();
+
+		double averageMark = (double) marksSum / marksAmount;
+		averageMark = Math.round(averageMark * 100.0) / 100.0;
+		return averageMark;
 	}
 
 	/**
 	 * Возвращает минимальную отметку за весь период обучения.
+	 *
 	 * @param marks отметки
 	 * @return минимальная отметка
 	 */
@@ -45,11 +56,15 @@ public class Task02 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return 0;
+		return Arrays.stream(marks)
+				.flatMapToInt(Arrays::stream)
+				.min()
+				.getAsInt();
 	}
 
 	/**
 	 * Возвращает максимальну отметку за весь период обучения.
+	 *
 	 * @param marks отметки
 	 * @return максимальная отметка
 	 */
@@ -57,7 +72,10 @@ public class Task02 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return 0;
+		return Arrays.stream(marks)
+				.flatMapToInt(Arrays::stream)
+				.max()
+				.getAsInt();
 	}
 
 	private static int[][] nextArray(int countDisciplines, int countSemesters) {
