@@ -21,7 +21,8 @@ public class Task01 extends StandardInputTask {
 
 	/**
 	 * Определяет, вошел ли игрок в ТОП игроков своей команды.
-	 * @param sizeTop позиция игрока по убыванию урона в своей команде
+	 *
+	 * @param sizeTop количество мест в ТОП рейтинге
 	 * @param positionPlayerByDamage позиция игрока по убыванию урона в своей команде
 	 * @return true когда вошел, false если не вошел
 	 */
@@ -29,6 +30,10 @@ public class Task01 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return false;
+		if (positionPlayerByDamage <= sizeTop) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
