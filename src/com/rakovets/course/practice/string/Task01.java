@@ -25,6 +25,7 @@ public class Task01 extends StandardInputTask {
 
 	/**
 	 * Возвращает имя сотрудника.
+	 *
 	 * @param fullName полное имя сотрудника в формате '${name} ${surname}'
 	 * @return имя сотрудника
 	 */
@@ -32,11 +33,13 @@ public class Task01 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		String name = fullName.split(" ")[0];
+		return name;
 	}
 
 	/**
 	 * Возвращает фамилию сотрудника.
+	 *
 	 * @param fullName полное имя сотрудника в формате '${name} ${surname}'
 	 * @return фамилия сотрудника
 	 */
@@ -44,11 +47,13 @@ public class Task01 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		String surname = fullName.split(" ")[1];
+		return surname;
 	}
 
 	/**
 	 * Возвращает полное имя сотрудника в обратном формате.
+	 *
 	 * @param fullName полное имя сотрудника в формате '${name} ${surname}'
 	 * @return полное имя сотрудника в обратном формате
 	 */
@@ -56,6 +61,6 @@ public class Task01 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		return getSurname(fullName) + " " + getName(fullName);
 	}
 }
