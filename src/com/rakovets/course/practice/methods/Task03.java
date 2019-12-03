@@ -23,7 +23,8 @@ public class Task03 extends StandardInputTask {
 	 * Возвращает цвет для шкалы HP игрока, в зависимости от процентного соотношения максимального количества HP и
 	 * текущего. Когда меньше 25% - красный, меньше 50% - оранжевый, меньше 75% - желтый, меньше либо равно 100 -
 	 * зеленый.
-	 * @param currentHealthPoint текущее количество HP игрока
+	 *
+	 * @param currentHealthPoint - текущее количество HP игрока
 	 * @param maxHealthPoint - максимальное количество HP игрока
 	 * @return null/'RED'/'ORANGE'/'YELLOW'/'GREEN'
 	 */
@@ -31,6 +32,19 @@ public class Task03 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		double percentage = (double) currentHealthPoint / maxHealthPoint * 100;
+		String scaleColor = null;
+		if (percentage == 0) {
+
+		} else if (percentage < 25) {
+			scaleColor = "RED";
+		} else if (percentage < 50) {
+			scaleColor = "ORANGE";
+		} else if (percentage < 75) {
+			scaleColor = "YELLOW";
+		} else if (percentage <= 100) {
+			scaleColor = "GREEN";
+		}
+		return scaleColor;
 	}
 }
