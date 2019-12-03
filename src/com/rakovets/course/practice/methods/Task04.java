@@ -3,7 +3,7 @@ package com.rakovets.course.practice.methods;
 import com.rakovets.course.util.StandardInputTask;
 
 /**
- * Разработать программу для desktop приложения:
+ * Разработать программу для desktop приложения,
  * которая преобразует номер дня недели в его словесный аналог.
  *
  * @author Dmitry Rakovets
@@ -19,10 +19,35 @@ public class Task04 extends StandardInputTask {
 
 	/**
 	 * Возвращает название дня недели, в зависимости от его порядкового номера.
+	 *
 	 * @param weekdayNumber - номер дня недели
 	 * @return день недели на английском языке (UPPER CASE)
 	 */
 	static String getNameWeekday(byte weekdayNumber) {
-		return null;
+		String dayOfTheWeek = null;
+		switch (weekdayNumber) {
+			case 1:
+				dayOfTheWeek = "MONDAY";
+				break;
+			case 2:
+				dayOfTheWeek = "TUESDAY";
+				break;
+			case 3:
+				dayOfTheWeek = "WEDNESDAY";
+				break;
+			case 4:
+				dayOfTheWeek = "THURSDAY";
+				break;
+			case 5:
+				dayOfTheWeek = "FRIDAY";
+				break;
+			case 6:
+				dayOfTheWeek = "SATURDAY";
+				break;
+			case 7:
+				dayOfTheWeek = "SUNDAY";
+				break;
+		}
+		return dayOfTheWeek;
 	}
 }
